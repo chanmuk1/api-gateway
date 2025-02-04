@@ -41,11 +41,11 @@ function authRole(role) {
 
 app.use('/order', authToken, authRole('user'), (req, res) => {
     console.log("INSIDE API GATEWAY ORDER VIEW")
-    proxy.web(req, res, { target: 'http://localhost:5003' });
+    proxy.web(req, res, { target: 'http://3.84.112.194:5003' });
 })
 
 app.use('/product', authToken, authRole('admin'), (req, res) => {
-    proxy.web(req, res, { target: 'http://localhost:5002' });
+    proxy.web(req, res, { target: 'http://54.225.13.177:5002' });
 })
 
 app.listen(port, () => {
